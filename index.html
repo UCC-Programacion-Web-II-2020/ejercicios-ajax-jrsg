@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicios AJAX</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="ejercicios.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="estilos.css" />
+</head>
+<body>
+
+<div class="ejercicio">
+    <h2>Ejercicio 1</h2>
+
+    <p>Al mismo tiempo que el usuario escribe (evento keyup) en el campo #buscar-paises, consulta al servidor y despliega en #paises los nombres de paises que empiecen con el texto escrito por el usuario.</p>
+    <p>Utiliza el script paises.php para este ejercicio.</p>
+    <p>El tipo de dato de la respuesta del servidor debe ser html.</p>
+    <div class="resultado">
+        <h3>Resultado</h3>
+
+        <label>Buscar paises<br>
+            <input type="text" id="buscar-paises">
+        </label>
+
+        <div id="paises"></div>
+    </div>
+</div>
+
+<div class="ejercicio">
+    <h2>Ejercicio 2</h2>
+
+    <p>Despliega en #colonias una tabla con las colonias con su correspondiente municipio y zona a las que haga referencia el código postal escrito por el usuario en el campo #codigo-postal. La búsqueda debe realizarse cuando el usuario presione el botón #buscar-codigos.</p>
+    <p>Utiliza la información de la tabla colonias y desarrolla tu solución en el script codigos.php</p>
+    <p>El tipo de dato de la respuesta del servidor debe ser json.</p>
+    <div class="resultado">
+        <h3>Resultado</h3>
+        <label>Código postal<br>
+            <input type="text" id="codigo-postal" maxlength="5">
+            <input type="button" id="buscar-codigos" value="Buscar">
+        </label>
+
+        <div id="colonias"></div>
+    </div>
+</div>
+
+<div class="ejercicio">
+    <h2>Ejercicio 3</h2>
+
+    <p>Despliega en #municipio todos los municipios del #estado seleccionado. La búsqueda de los municipios se debe efectuar cuando el usuario seleccione (evento change) un #estado.</p>
+    <p>Utiliza la información de la tabla municipios y desarrolla tu solución en el script municipios.php</p>
+    <p>El tipo de dato de la respuesta del servidor debe ser json.</p>
+    <div class="resultado">
+        <h3>Resultado</h3>
+        <div class="inline">
+            <label>Estado<br>
+                <select id="estado">
+                    <option value="">Seleccione un estado</option>
+                    <option value="1">Aguascalientes</option>
+                    <option value="2">Baja California</option>
+                    <option value="3">Baja California Sur</option>
+                    <option value="4">Campeche</option>
+                    <option value="5">Coahuila</option>
+                    <option value="6">Colima</option>
+                    <option value="7">Chiapas</option>
+                    <option value="8">Chihuahua</option>
+                    <option value="9">Ciudad de México</option>
+                    <option value="10">Durango</option>
+                    <option value="11">Guanajuato</option>
+                    <option value="12">Guerrero</option>
+                    <option value="13">Hidalgo</option>
+                    <option value="14">Jalisco</option>
+                    <option value="15">México</option>
+                    <option value="16">Michoacán</option>
+                    <option value="17">Morelos</option>
+                    <option value="18">Nayarit</option>
+                    <option value="19">Nuevo León</option>
+                    <option value="20">Oaxaca</option>
+                    <option value="21">Puebla</option>
+                    <option value="22">Querétaro</option>
+                    <option value="23">Quintana Roo</option>
+                    <option value="24">San Luis Potosí</option>
+                    <option value="25">Sinaloa</option>
+                    <option value="26">Sonora</option>
+                    <option value="27">Tabasco</option>
+                    <option value="28">Tamaulipas</option>
+                    <option value="29">Tlaxcala</option>
+                    <option value="30">Veracruz</option>
+                    <option value="31">Yucatán</option>
+                    <option value="32">Zacatecas</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="inline">
+            <label>Municipio<br>
+                <select id="municipio"><option>Municipios</option></select>
+            </label>
+        </div>
+    </div>
+</div>
+</body>
+</html>
