@@ -20,4 +20,30 @@ $paises = array('Afganistán', 'Albania', 'Alemania', 'Andorra', 'Angola', 'de A
     'Santa Lucía', 'Senegal', 'Serbia y Montenegro', 'Seychelles', 'Sierra Leona', 'Singapur', 'Siria', 'Somalia', 'Sri Lanka', 'Suazilandia', 'Sudáfrica', 'Sudán', 'Suecia', 'Suiza',
     'Surinam', 'Svalbard', 'Tailandia', 'Taiwan', 'Tanzania', 'Tayikistán', 'Timor oriental', 'Togo', 'Tonga', 'Trinidad y Tobago', 'Túnez', 'Turkmenistán', 'Turquía', 'Tuvalu',
     'Ucrania', 'Uganda', 'Uruguay', 'Uzbekistán', 'Vanuatu', 'Venezuela', 'Vietnam', 'Wallis,Futuna', 'Yemen', 'Yibuti', 'Zambia', 'Zimbabue');
+
+$busqueda = trim($_GET['busqueda']);
+
+$encontrados = array();
+
+if(!empty($busqueda)) {
+    foreach ($paises as $pais) {
+        if (strpos($pais, $busqueda) !== false) {
+            $encontrados[] = $pais;
+        }
+    }
+}
+
+if(count($encontrados) > 0) {
+    $lista = '<ol>';
+
+    foreach($encontrados as $encontrado){
+        $lista .= "<li>$encontrado</li>";
+    }
+
+    $lista .= '</ol>';
+
+    echo $lista;
+}else{
+    echo '<span style="color:red">No hay datos</span>';
+}
 ?>
