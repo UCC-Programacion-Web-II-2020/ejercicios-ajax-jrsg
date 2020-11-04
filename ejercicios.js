@@ -19,6 +19,8 @@ $(document).ready(function(){
         }
     });
 
+    ////////////////////////////////////////////////////
+
 
     $('#buscar-codigos').on('click', function(){
        var cp = $('#codigo-postal').val();
@@ -41,8 +43,43 @@ $(document).ready(function(){
                alert('Error al realizar la consulta');
            }
        });
-
-
     });
 
+    /////////////////////////////////////////////////
+
+    $('#estado').on('change', function(){
+        var id_estado = $(this).val();
+
+        if(id_estado !== ''){
+
+            $.ajax({
+                data:'id_estado=' + id_estado,
+                url:'municipios.php',
+                type:'GET',
+                dataType:'json',
+                success:function(respuesta){
+                    llenarListaMunicipios( respuesta );
+                },
+                error:function(){
+                    alert('Error al realizar la petición');
+                }
+            });
+        }
+    });
 });
+
+function llenarListaMunicipios(respuesta){
+    $('#municipio').empty();
+
+    if(respuesta.encontrados > 0){
+
+        $.each(respuesta.municipios, function(indice, municipio){
+
+            $('#municipio').append(
+                $('<option>').val( municipio.id ).text( municipio.nombre )
+            );
+
+        });
+    }
+
+}
